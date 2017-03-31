@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+  <div class="about">
+    <h4><a href="https://www.merriam-webster.com/dictionary/gerrymander" target="_blank">gerrymander</a></h4>
+    <p><em>verb</em> | ger·ry·man·der | ˈjer-ē-ˌman-dər</p>
+      <ol>
+        <li>To divide (a territorial unit) into election districts to give one political party an electoral majority in a large number of districts while concentrating the voting strength of the opposition in as few districts as possible</li>
+        <li>To divide (an area) into political units to give special advantages to one group </li>
+      </ol>
+    <br>
+    
+    <h4>Why Is Gerrymandering An Important Issue?</h4>
+      <p>At its core, gerrymandering is anti-democratic. Most of the time, the political party in power at the state level is tasked with drawing the state’s district boundaries. In order to maintain or increase its power, the political party drawing the district boundaries might decide to pack as many voters of the opposite party into as few districts as possible. This is the goal of gerrymandering, which undermines the democratic process from the state level up to the federal level.</p>
+     <p> Gerrymandering is the reason why, despite Barack Obama’s popular vote and electoral college win in 2012, the Republican party maintained control of the House of Representatives. The House of Representatives was intended by our founding fathers to represent the voice of the majority. If congressional districts were fairly drawn, then the House of Representatives would have flipped Democrat in 2012.</p>
+      <p>But it’s not just Republicans gerrymandering districts in Republican-controlled states like Texas and North Carolina. Gerrymandering is also rampant in Democrat-controlled states like Illinois and Maryland. Ultimately, both parties are to blame.</p>
+    <br>  
+    
+    <h4>What Can I Do?</h4>  
+      <p>Some states have already started addressing gerrymandering by delegating redistricting to a third party commission. Most states, however, still allow the party in power at the state level to draw up the district boundaries.</p>
+      <p>Because redistricting happens at the state level, the best thing to do is to lobby the representatives in your statehouse and demand an end to partisan districting. Making your voice heard at the state level is the best way to join the fight against gerrymandering.</p>
+    <br>
+    
+    <h4>How To Determine If A District Is Gerrymandered</h4>
+      <p>The term “gerrymander” originated due to the shape of districts resembling that of a salamander. Generally, the less compact the shape of a district (e.g. a shape resembling a salamander), the more gerrymandered it is.</p>
+      <p>One way to determine the compactness of a district is to compare the area of a district to the area of a circle with the same perimeter as the district. This is called the Polsby-Popper method, and it generates a score between 0 and 1. The closer the score is to 1, the less gerrymandered a district is.</p>
+      <p>But the Polsby-Popper method does have its shortfalls, one being that looking at compactness is just one factor in determining whether or not a district is gerrymandered. Another problem is that districts with large amounts of snaking coastline tend to receive a lower score. However, the Polsby-Popper method is generally a good indicator as to whether or not a district is gerrymandered (or at least likely to be gerrymandered).</p>
+    <br>
+    
+    <h4>Methodology</h4>
+      <p>I calculated the area and perimeter of each congressional district in the 115th U.S. Congress using shapefiles from the U.S. Census. That information was then used to determine the Polsby-Popper score for each district. The Polsby-Popper scores were then multiplied by 100 to put them in a scale between 0 and 100. I then set the threshold for gerrymandering on this scale to be a score of less than 14. When you search for an address in the form, your district is located and its Polsby-Popper score is returned. The result is a map that displays your district and says whether or not your district is gerrymandered.</p>
+      <p>A couple of the Polsby-Popper scores had to be modified in order to take into consideration factors like water area. For example, with combined land and water area, Ohio's 9th district does not appear to be gerrymandered. However, it most certainly is.</p>
+    <br>
+    
+    <h4>Notes</h4>
+      <p>Some districts are missing from the Google Civic Information API, which is what the site uses to determine your congressional district. Therefore, some valid searches may return an error (e.g. locations in North Carolina's 9th district).</p>
+  </div>
+  
+  <div class="button-about">
+        <a id="back-button" class="btn btn-default pull-left" href="/" role="button" ><-Back</a>
+  </div>
+{% endblock %}
+
+{% block footer %}
+    <p><a href="https://twitter.com/samreising" target="_blank">@samreising</a></p>
+{% endblock %}

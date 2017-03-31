@@ -1,0 +1,85 @@
+.container, footer
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: none;
+}
+
+main .form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+#map
+{
+    display: inline-block;
+    height: 400px;
+    width: 60%;
+}
+
+.footer
+{
+    padding-top: 1em;
+}
+
+.footer a
+{
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+.button-about
+{
+    margin-top: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.button-district
+{
+    margin-top: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.error-
+{
+    display: none;
+}
+
+.error-true
+{
+    color: red;
+}
+
+.about
+{
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+}
+
+.citations, .citations:hover
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+    #map
+    {
+        display: inline-block;
+        height: 400px;
+        width: 80%;
+    }
+
+    .button-district
+    {
+        margin-top: 10px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}

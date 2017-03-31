@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ full_district_name }}
+{% endblock %}
+
+{% block main %}
+  <div class="results">      
+    <h1>{{ full_district_name }}</h1>
+    <h4 class="{{ gerrymandered_class }}">{{ gerrymandered_msg }}</h4>
+    <p><a class="text-info" href="/about">Learn More.</a></p>
+    <div id="map"></div>
+        
+    <script>
+        // create map
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 0
+          });
+      
+          // load GeoJSON
+          map.data.loadGeoJson('/static/jsons/' + '{{ geoid }}' + '.json');
+          
+          // zoom to show all the features
+          var bounds = new google.maps.LatLngBounds();
+          map.data.addListener('addfeature', function(e) {
+              processPoints(e.feature.getGeometry(), bounds.extend, bounds);
+              map.fitBounds(bounds);
+          });
+          
+          // process each point in a Geometry, regardless of how deep the points may lie.
+          function processPoints(geometry, callback, thisArg) {
+            if (geometry instanceof google.maps.LatLng) {
+              callback.call(thisArg, geometry);
+            } else if (geometry instanceof google.maps.Data.Point) {
+              callback.call(thisArg, geometry.get());
+            } else {
+              geometry.getArray().forEach(function(g) {
+                processPoints(g, callback, thisArg);
+              });
+            }
+          }
+        }
+    </script>
+    
+    <div class="button-district">
+        <a id="back-button" class="btn btn-default pull-left" href="/" role="button" ><-Back</a>
+    </div>
+  </div>      
+{% endblock %}
+
+{% block footer %}
+    <p><a href="https://twitter.com/samreising" target="_blank">@samreising</a></p>
+{% endblock %}
