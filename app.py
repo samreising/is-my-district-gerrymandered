@@ -6,7 +6,7 @@ from apiclient.discovery import build
 from werkzeug.exceptions import HTTPException
 import json
 
-from credentials import *
+#from credentials import *
 
 # configure application
 app = Flask(__name__)
