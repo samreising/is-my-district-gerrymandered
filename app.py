@@ -7,7 +7,7 @@ from werkzeug.exceptions import HTTPException
 import json
 import os
 
-#from credentials import *
+# add API keys
 CIVIC_API_KEY = os.environ['CIVIC_API_KEY']
 MAPS_API_KEY = os.environ['MAPS_API_KEY']
 
