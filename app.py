@@ -5,8 +5,11 @@ from flask_jsglue import JSGlue
 from apiclient.discovery import build
 from werkzeug.exceptions import HTTPException
 import json
+import os
 
 #from credentials import *
+CIVIC_API_KEY = os.environ['CIVIC_API_KEY']
+MAPS_API_KEY = os.environ['MAPS_API_KEY']
 
 # configure application
 app = Flask(__name__)
