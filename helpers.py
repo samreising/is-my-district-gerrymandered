@@ -67,9 +67,9 @@ def lookup_district(response):
         
     # if Polsby-Popper score is less than 14, the district is gerrymandered
     if polsby_popper < 14:
-        district.append(['Your district is gerrymandered!', 'text-danger'])
+        district.append(['Your district is likely gerrymandered!', 'text-danger'])
     else:
-        district.append(['Your district is not gerrymandered!', 'text-success'])
+        district.append(['Your district is likely not gerrymandered!', 'text-success'])
     
     # district should contain state, full district name, district (number), GeoID, Polsby-Popper Score, INTLAT, INTLONG, gerrymandered message/class
     return {
