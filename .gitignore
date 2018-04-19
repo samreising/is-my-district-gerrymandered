@@ -1,5 +1,0 @@
-venv
-credentials.py
-*.pyc
-.*
-!.*/
