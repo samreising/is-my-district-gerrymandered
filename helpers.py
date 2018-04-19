@@ -3,8 +3,6 @@ from models import Calculations, Fips_Codes
 class District:
 
     def __init__(self):
-        self.__district_list = []
-
         self.response = None
         self.state = None
         self.congressional_district = None
@@ -13,6 +11,7 @@ class District:
         self.intpt_lon = None
         self.message = None
         self.message_class = None
+        self.__district_list = []
         self.__fips_code = None
         self.__at_large = None
         self.__polsby_popper = None
