@@ -1,4 +1,5 @@
 venv
+credentials.py
 *.pyc
 .*
-!/.gitignore
+!.*/
