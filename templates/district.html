@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    {{ full_district_name }}
+    {{ congressional_district }}
 {% endblock %}
 
 {% block main %}
   <div class="results">      
-    <h1>{{ full_district_name }}</h1>
-    <h4 class="{{ gerrymandered_class }}">{{ gerrymandered_msg }}</h4>
+    <h1>{{ congressional_district }}</h1>
+    <h4 class="{{ message_class }}">{{ message }}</h4>
     <p><a id="about" class="text-info" href="/about">Learn More.</a></p>
     <div id="map"></div>
         
